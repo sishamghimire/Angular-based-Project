@@ -1,0 +1,10 @@
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">{{selectedShop?.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted"> Location: {{selectedShop?.location}}</h6>
+    <p class="card-text">{{selectedShop?.description}}</p>
+    <p class="font-weight-bold"> Opening Date:{{selectedShop?.openingDate | date}}</p>
+    <button class="btn btn-danger"  (click)="hide()">Hide</button>
+    <button class ="btn-primary " type="button" (click)="viewDetails()"> View Details</button>
+  </div>
+</div>

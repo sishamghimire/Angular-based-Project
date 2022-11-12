@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h1 class="display-4">About Us </h1>
+  <p class ="lead">This is our simple application for Book Store</p>
+  <hr class="my-4">
+</div>
+<div class="row" *ngIf="viewingShop">
+  <div class="col-sm-12">
+    <div class ="alert-warning"> The user is viewing at {{viewingShop?.name}} at {{viewingShop?.location}}</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 pt-3" *ngFor="let shop of shops">
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">{{shop?.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted"> Location: {{shop?.location}}</h6>
+        <p class="card-text">{{shop?.description}}</p>
+        <p class="font-weight-bold"> Opening Date:{{shop?.openingDate | date}}</p>
+        <button class="btn-primary" (click)="viewDetails(shop?.id)">View Details </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <app-about-us-details [selectedShop]="selectedShop"
+                        (hideEmitter)="condition($event)"
+                        (viewingEmitter)="responseView($event)"
+                        *ngIf="selectedShop"></app-about-us-details>
+
+</div>
+
+
+
