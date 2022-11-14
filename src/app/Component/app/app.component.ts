@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project';
+
+  constructor( private  activatedRoute: ActivatedRoute,
+               private route: Router
+  ) {}
+  public routeToId():void{
+    this.route.navigate(['/aboutUs/6767']);
+  }
 }
+
+
+
+
